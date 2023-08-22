@@ -11,7 +11,9 @@ public class Gestionnaire extends Personne {
     //Mise en place de la collection des gestionnaires
     private static final ArrayList<Gestionnaire> gestionnaires = new ArrayList<Gestionnaire>();
 
-
+    public static ArrayList<Gestionnaire> getGestionnaire() {
+        return gestionnaires;
+    }
     public Gestionnaire(String nom, String prenom, int matricule) {
         super(nom, prenom);
         this.setMatricule(matricule);
