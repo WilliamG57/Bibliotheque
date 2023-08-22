@@ -18,6 +18,15 @@ public class AppFrame extends JFrame {
     private JTextArea matriculeText;
     private JLabel checkMatricule;
 
+    public static void test() {
+        AppFrame h = new AppFrame();
+        h.setContentPane(h.PanelMain);
+        h.setTitle("Hello");
+        h.setSize(300, 300);
+        h.setVisible(true);
+        h.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+
     public AppFrame() {
         choiceGrade.addActionListener(new ActionListener() {
             @Override
@@ -53,17 +62,9 @@ public class AppFrame extends JFrame {
                 }
                 ChoiceArticle switchpop = new ChoiceArticle();
                 switchpop.setVisible(true);
-
             }
         });
     }
 
-    public static void test() {
-        AppFrame h = new AppFrame();
-        h.setContentPane(h.PanelMain);
-        h.setTitle("Hello");
-        h.setSize(300, 300);
-        h.setVisible(true);
-        h.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    }
+
 }
