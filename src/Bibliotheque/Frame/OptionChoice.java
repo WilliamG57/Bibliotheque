@@ -1,14 +1,38 @@
 package Bibliotheque.Frame;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class OptionChoice {
+public class OptionChoice extends JFrame {
     private JPanel OptionChoice;
     private JLabel TitleOption;
-    private JButton button1;
-    private JButton button2;
-    private JButton button3;
-    private JButton button4;
-    private JButton button5;
-    private JButton button6;
+    private JButton OptionRendre;
+    private JButton OptionEmprunter;
+    private JButton OptionRecherche;
+    private JButton OptionAjout;
+    private JButton OptionRetour;
+
+    public OptionChoice () {
+        setSize(300, 300);
+        setLocationRelativeTo(null);
+        setVisible(true);
+        getContentPane().add(OptionChoice);
+        OptionRetour.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
+                AppFrame.test();
+            }
+        });
+
+        OptionAjout.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
+                ChoiceAjout x = new ChoiceAjout();
+                x.setVisible(true);
+            }
+        });
+    }
 }

@@ -9,6 +9,7 @@
       <enabled value="true"/>
       <minimumSize width="316" height="149"/>
       <preferredSize width="316" height="149"/>
+      <visible value="true"/>
     </properties>
     <border type="none"/>
     <children>
@@ -34,6 +35,7 @@
         </constraints>
         <properties>
           <text value="BD"/>
+          <visible value="true"/>
         </properties>
       </component>
     </children>

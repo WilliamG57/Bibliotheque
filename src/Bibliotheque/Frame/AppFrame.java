@@ -24,6 +24,7 @@ public class AppFrame extends JFrame {
         h.setTitle("Hello");
         h.setSize(300, 300);
         h.setVisible(true);
+        h.setLocationRelativeTo(null);
         h.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
@@ -60,11 +61,10 @@ public class AppFrame extends JFrame {
                 } else {
                     JOptionPane.showMessageDialog(btnClick, "Bienvenue à toi.");
                 }
-                ChoiceArticle switchpop = new ChoiceArticle();
+                dispose();
+                OptionChoice switchpop = new OptionChoice();
                 switchpop.setVisible(true);
             }
         });
     }
-
-
 }
