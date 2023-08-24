@@ -3,13 +3,14 @@ package Bibliotheque.Frame;
 import Bibliotheque.ClassMetier.Gestionnaire;
 
 import javax.swing.*;
+import javax.swing.plaf.nimbus.NimbusLookAndFeel;
+import javax.swing.plaf.nimbus.NimbusStyle;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Objects;
 
 
 public class AppFrame extends JFrame {
-
     public JPanel PanelMain;
     private JTextField txtPrenom;
     private JButton btnClick;
@@ -19,10 +20,15 @@ public class AppFrame extends JFrame {
     private JLabel checkMatricule;
 
     public static void test() {
+        try {
+            UIManager.setLookAndFeel( new NimbusLookAndFeel() );
+        } catch( Exception ex ) {
+            System.err.println( "Failed to initialize LaF" );
+        }
         AppFrame h = new AppFrame();
         h.setContentPane(h.PanelMain);
         h.setTitle("Hello");
-        h.setSize(300, 300);
+        h.setSize(500, 300);
         h.setVisible(true);
         h.setLocationRelativeTo(null);
         h.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

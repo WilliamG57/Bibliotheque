@@ -1,11 +1,12 @@
 package Bibliotheque.Frame;
 
 import javax.swing.*;
+import javax.swing.plaf.nimbus.NimbusLookAndFeel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class OptionChoice extends JFrame {
-    private JPanel OptionChoice;
+    private JPanel OptionChoicePanel;
     private JLabel TitleOption;
     private JButton OptionRendre;
     private JButton OptionEmprunter;
@@ -13,11 +14,24 @@ public class OptionChoice extends JFrame {
     private JButton OptionAjout;
     private JButton OptionRetour;
 
+    public static void DesignOptionChoice () {
+        OptionChoice x = new OptionChoice();
+        x.setSize(300, 300);
+        x.setLocationRelativeTo(null);
+        x.setVisible(true);
+        x.getContentPane().add(x.OptionChoicePanel);
+    }
+
     public OptionChoice () {
-        setSize(300, 300);
+        try {
+            UIManager.setLookAndFeel( new NimbusLookAndFeel() );
+        } catch( Exception ex ) {
+            System.err.println( "Failed to initialize LaF" );
+        }
+        setSize(500, 300);
         setLocationRelativeTo(null);
         setVisible(true);
-        getContentPane().add(OptionChoice);
+        getContentPane().add(OptionChoicePanel);
         OptionRetour.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -34,5 +48,15 @@ public class OptionChoice extends JFrame {
                 x.setVisible(true);
             }
         });
+
+        OptionRecherche.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
+                ChoiceSearch x = new ChoiceSearch();
+                x.setVisible(true);
+            }
+        });
+        dispose();
     }
 }

@@ -1,6 +1,7 @@
 package Bibliotheque.Frame;
 
 import javax.swing.*;
+import javax.swing.plaf.nimbus.NimbusLookAndFeel;
 
 public class ChoiceAjout extends JFrame{
     private JPanel AjoutPanel;
@@ -15,7 +16,12 @@ public class ChoiceAjout extends JFrame{
     private JComboBox comboBox1;
 
     public ChoiceAjout() {
-        setSize(300, 300);
+        try {
+            UIManager.setLookAndFeel( new NimbusLookAndFeel() );
+        } catch( Exception ex ) {
+            System.err.println( "Failed to initialize LaF" );
+        }
+        setSize(500, 300);
         setLocationRelativeTo(null);
         setVisible(true);
         getContentPane().add(AjoutPanel);

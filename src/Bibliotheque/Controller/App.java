@@ -4,8 +4,6 @@ import Bibliotheque.ClassMetier.*;
 import Bibliotheque.Frame.AppFrame;
 import Bibliotheque.Utilitaires.*;
 
-import javax.swing.*;
-
 public class App {
     public static void main(String[] args) {
 
