@@ -22,7 +22,7 @@ public class ChoiceBorrow extends JFrame {
     private JLabel AuthorBorrow;
     private JPanel BorrowPanel;
 
-    public ChoiceBorrow () {
+    public ChoiceBorrow() {
         try {
             UIManager.setLookAndFeel(new NimbusLookAndFeel());
         } catch (Exception ex) {
@@ -57,10 +57,12 @@ public class ChoiceBorrow extends JFrame {
                         if (livre.getIsbn() == Integer.parseInt(s)) {
                             TextTitle.setText(livre.getTitre());
                             TextAuthor.setText(livre.getAuteur());
+                            Boolean x = livre.getDispo();
+                            x=false;
                         }
                     }
                 }
-                if (ComboBoxBorrow.getSelectedItem().equals("BD")){
+                if (ComboBoxBorrow.getSelectedItem().equals("BD")) {
                     String s = TextSearch.getText();
                     for (BD Bd : Bibliotheque.getBD()) {
                         if (Bd.getCollection().equals(s)) {
@@ -81,5 +83,5 @@ public class ChoiceBorrow extends JFrame {
         });
 
     }
-    }
 }
+

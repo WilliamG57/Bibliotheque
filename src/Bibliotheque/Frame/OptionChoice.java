@@ -49,6 +49,15 @@ public class OptionChoice extends JFrame {
             }
         });
 
+        OptionEmprunter.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
+                ChoiceBorrow x = new ChoiceBorrow();
+                x.setVisible(true);
+            }
+        });
+
         OptionRecherche.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

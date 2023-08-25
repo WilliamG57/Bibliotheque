@@ -7,7 +7,7 @@ import Bibliotheque.Utilitaires.*;
 public class App {
     public static void main(String[] args) {
 
-       AppFrame.test();
+        AppFrame.test();
 
         int choice;
 

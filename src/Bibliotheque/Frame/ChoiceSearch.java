@@ -25,6 +25,8 @@ public class ChoiceSearch extends JFrame {
     private JButton BtnSearch;
     private JTextField TextDispo;
     private JLabel DispoSearch;
+    private JButton BtnBorrow;
+
 
     public ChoiceSearch() {
         try {
@@ -61,25 +63,43 @@ public class ChoiceSearch extends JFrame {
                         if (livre.getIsbn() == Integer.parseInt(s)) {
                             TextTitle.setText(livre.getTitre());
                             TextAuthor.setText(livre.getAuteur());
-                            TextDispo.setText(""+livre.getDispo());
+                            TextDispo.setText("" + livre.getDispo());
+                            BtnBorrow.addActionListener(new ActionListener() {
+                                @Override
+                                public void actionPerformed(ActionEvent e) {
+                                    JOptionPane.showMessageDialog(BtnBorrow, livre.getTitre() + " à bien été emprunté");
+                                    livre.setDispo(false);
+                                }
+                            });
                         }
                     }
                 }
-                if (ComboBoxSearch.getSelectedItem().equals("BD")){
+                if (ComboBoxSearch.getSelectedItem().equals("BD")) {
                     String s = TextSearch.getText();
                     for (BD Bd : Bibliotheque.getBD()) {
                         if (Bd.getCollection().equals(s)) {
                             TextTitle.setText(Bd.getTitre());
                             TextAuthor.setText(Bd.getAuteur());
+                            TextDispo.setText("" + Bd.getDispo());
+                            JOptionPane.showMessageDialog(BtnBorrow, Bd.getTitre() + " à bien été emprunté");
                         }
                     }
                 }
             }
         });
 
+//        BtnBorrow.addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//                JOptionPane.showMessageDialog(BtnBorrow, TextTitle + " à bien été emprunté");
+//                livre.getDispo()
+//            }
+//        });
+
+
         ReturnSearch.addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed (ActionEvent e){
                 setVisible(false);
                 OptionChoice.DesignOptionChoice();
             }
